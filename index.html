@@ -52,6 +52,7 @@ var start = new Date(now.getFullYear(), 0, 0);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.floor(diff / oneDay);
+var mon = now.getFullYear() + '' + (now.getMonth()+1);
 
 $(document).ready(function() {
 	$('table.display').DataTable( {
@@ -66,17 +67,18 @@ $(document).ready(function() {
 	} );
 	
 	$('tr').filter(function() { return $(this).attr("id") < day; }).hide();
-	$('table').filter(function() { return $(this).attr("id") < day; }).hide();
+	
+	$('table').filter(function() { return $(this).attr("id") < mon; }).hide();
 	
 	$('#isPrevSelected').change(function(){
     if (this.checked) {
-        $('tr').filter(function() {	return $(this).attr("id") < day; }).show();
-        $('table').filter(function() {	return $(this).attr("id") < day; }).show();
+        $('tr').filter(function() {	return $(this).attr("id") < day; }).show();        
+        $('table').filter(function() { return $(this).attr("id") < mon; }).show();        
     }
 	else
 	{
-		$('tr').filter(function() { return $(this).attr("id") < day; }).hide();
-		$('table').filter(function() { return $(this).attr("id") < day; }).hide();
+		$('tr').filter(function() { return $(this).attr("id") < day; }).hide();		
+		$('table').filter(function() { return $(this).attr("id") < mon; }).hide();		
 	}
 	});
 	
@@ -102,7 +104,7 @@ $(document).ready(function() {
   <body>
     <table width="100%" class="colors"><tr><td width="20%" style="background-color: #81d1fc;">الدوري السعودي</td><td width="20%" style="background-color: #ffba7d;">كأس الملك</td><td width="20%" style="background-color: #cfabff;">دوري أبطال آسيا</td><td width="20%" style="background-color: #4fe095;">مباريات المنتخب</td><td width="20%" style="background-color: #e0fa5f;">السوبر السعودي</td></tr></table> 
 <input type="checkbox" id="isPrevSelected"/>إظهار المباريات السابقة
-<table id="1" class="display" border="0" >
+<table id="20201" class="display" border="0" >
 <thead><tr><th>اليوم</th><th>يناير 2020</th><th width="30%">الهلال</th><th width="30%">النصر</th><th width="30%">الأهلي</th></tr></thead><tbody>
 <tr id="1"><td >الأربعاء</td><td  >1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="2"><td >الخميس</td><td  >2</td><td>&nbsp;</td><td>&nbsp;</td><td style="background-color: #ffba7d">✈️الفيحاء</td></tr>
@@ -135,7 +137,7 @@ $(document).ready(function() {
 <tr id="29"><td >الأربعاء</td><td  >29</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="30"><td >الخميس</td><td  >30</td><td>&nbsp;</td><td style="background-color: #81d1fc">✈️ضمك</td><td>&nbsp;</td></tr>
 <tr id="31"><td >الجمعة</td><td  >31</td><td style="background-color: #81d1fc">✈️أبها</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table><br />
-<table id="32" class="display" border="0" >
+<table id="20202" class="display" border="0" >
 <thead><tr><th>اليوم</th><th>فبراير 2020</th><th width="30%">الهلال</th><th width="30%">النصر</th><th width="30%">الأهلي</th></tr></thead><tbody>
 <tr id="32"><td >السبت</td><td  >1</td><td>&nbsp;</td><td>&nbsp;</td><td style="background-color: #81d1fc">✈️العدالة</td></tr>
 <tr id="33"><td >الأحد</td><td  >2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
@@ -166,7 +168,7 @@ $(document).ready(function() {
 <tr id="58"><td >الخميس</td><td  >27</td><td style="background-color: #81d1fc">✈️التعاون</td><td style="background-color: #81d1fc">🏠الأهلي</td><td style="background-color: #81d1fc">✈️النصر</td></tr>
 <tr id="59"><td >الجمعة</td><td  >28</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="60"><td >السبت</td><td  >29</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table><br />
-<table id="61" class="display" border="0" >
+<table id="20203" class="display" border="0" >
 <thead><tr><th>اليوم</th><th>مارس 2020</th><th width="30%">الهلال</th><th width="30%">النصر</th><th width="30%">الأهلي</th></tr></thead><tbody>
 <tr id="61"><td >الأحد</td><td  >1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="62"><td >الاثنين</td><td  >2</td><td>&nbsp;</td><td>&nbsp;</td><td style="background-color: #cfabff">🏠الشرطة العراقي</td></tr>
@@ -199,7 +201,7 @@ $(document).ready(function() {
 <tr id="89"><td >الأحد</td><td  >29</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="90"><td >الاثنين</td><td  >30</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="91"><td >الثلاثاء</td><td  >31</td><td style="background-color: #4fe095">✈️سنغافورا</td><td style="background-color: #4fe095">✈️سنغافورا</td><td style="background-color: #4fe095">✈️سنغافورا</td></tr></tbody></table><br />
-<table id="92" class="display" border="0" >
+<table id="20204" class="display" border="0" >
 <thead><tr><th>اليوم</th><th>أبريل 2020</th><th width="30%">الهلال</th><th width="30%">النصر</th><th width="30%">الأهلي</th></tr></thead><tbody>
 <tr id="92"><td >الأربعاء</td><td  >1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="93"><td >الخميس</td><td  >2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
@@ -231,7 +233,7 @@ $(document).ready(function() {
 <tr id="119"><td >الثلاثاء</td><td style="background-color: #dbffdf" >28</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="120"><td >الأربعاء</td><td style="background-color: #dbffdf" >29</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="121"><td >الخميس</td><td style="background-color: #dbffdf" >30</td><td style="background-color: #81d1fc">🏠الفيصلي</td><td style="background-color: #81d1fc">🏠العدالة</td><td style="background-color: #81d1fc">✈️ضمك</td></tr></tbody></table><br />
-<table id="122" class="display" border="0" >
+<table id="20205" class="display" border="0" >
 <thead><tr><th>اليوم</th><th>مايو 2020</th><th width="30%">الهلال</th><th width="30%">النصر</th><th width="30%">الأهلي</th></tr></thead><tbody>
 <tr id="122"><td >الجمعة</td><td style="background-color: #dbffdf" >1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr id="123"><td >السبت</td><td style="background-color: #dbffdf" >2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
