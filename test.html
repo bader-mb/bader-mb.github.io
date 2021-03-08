@@ -5,28 +5,36 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>مباريات المتنافسين - السعودية 2020-2021</title>
 	<style>
+	html, 
+	body {height:100%; padding:0; margin:0; width:100%;}
+	body {display:flex; flex-direction:column;}	
 	body {
 		background: url(logo.png) repeat !important;
 	}
 
-	#tables_wrapper {
-		direction: rtl;
-		max-width: 520px;
-		max-height: 450px;
-		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
-		position: relative;
-		margin: 0;
+	header {
+		flex-shrink: 0;
+	}	
+	
+	footer {
+		flex-shrink: 0;
+		text-align: center;
 	}
-
+	
+	#main {
+		flex-grow:1;
+		overflow: auto;
+	}
+	
 	table.display {
-		position: relative;
+		margin: 3px;
+		/*position: relative;*/
 		border: 0;
 		width: 520px;
 		border-spacing: 2px;
 		border-collapse: separate;
 		font-size: 0.90em;
-		margin-bottom: 12px;
+		margin-bottom: 12px;		
 	}
 
 	table.colors {
@@ -53,7 +61,6 @@
 
 	thead th {
 		position: -webkit-sticky;
-		/* for Safari */
 		position: sticky;
 		top: 0;
 		border: 1px solid #bababa;
@@ -76,16 +83,15 @@
 
 	tbody th:first-child {
 		position: -webkit-sticky;
-		/* for Safari */
 		position: sticky;
 		right: 0;
 		z-index: 1;
-		background: #fff;
+		background: #fff;		
+		
 	}
 
 	tbody th:nth-child(2) {
 		position: -webkit-sticky;
-		/* for Safari */
 		position: sticky;
 		right: 60px;
 		z-index: 1;
@@ -132,6 +138,7 @@
   </head>
   <body>
   
+  <header>
     <table class="colors">
 	<tr>
 		<td style="background-color: #81d1fc;">الدوري السعودي</td>
@@ -143,9 +150,9 @@
 
 	</tr>
 </table>
-<input type="checkbox" id="isPrevSelected"/>إظهار المباريات السابقة
-
-<div id="tables_wrapper">
+&nbsp;&nbsp;<input type="checkbox" id="isPrevSelected"/>إظهار المباريات السابقة
+</header>
+<div id="main" role="main">
 <table id="202010" class="display">
 	<thead>
 		<tr>
@@ -2211,6 +2218,8 @@
 </table>
 </div>	
 
-	<div style="background:#ff5e5e; color: #FFF; font-weight: bold; width: 100%; text-align:center">جميع الحقوق محفوظة © <a href="https://twitter.com/bader_mb">𝓑𝓪𝓭𝓮𝓻</a></div>
+	<footer>
+	بواسطة © <a href="https://twitter.com/bader_mb">𝓑𝓪𝓭𝓮𝓻</a>
+	</footer>
   </body>
 </html>
