@@ -6,7 +6,7 @@
     <title>مباريات المتنافسين - السعودية 2020-2021</title>
 	<style>
 	html, 
-	body {height:100%; padding:0; margin:0; width:100%;}
+	body {height:100%; padding:0; margin:0; width:100%; }
 	body {display:flex; flex-direction:column;}	
 	body {
 		background: url(logo.png) repeat !important;
@@ -25,15 +25,18 @@
 	
 	#main {
 		flex-grow:1;
-		overflow: scroll;
+		overflow: auto;
+		border: 0;
+		margin: 5px;
+		-webkit-overflow-scrolling: touch;
 
 	}
 	
 	table.display {
-		margin: 5px;
-		/*position: relative;*/
-		border: 0;
-		width: 520px;
+		position: -webkit-sticky;
+      	position: sticky;
+		border: 0;		
+		width: 460px;
 		border-spacing: 2px;
 		border-collapse: separate;
 		font-size: 0.90em;
@@ -52,6 +55,7 @@
 	th {
 		border: 1px solid #bababa;
 		text-align: center;
+		
 	}
 
 	td.current {
@@ -59,13 +63,17 @@
 	}
 
 	th.team {
-		width: 100px;
+		width: 90px;
 	}
+	
+	tbody th { font-weight: normal;}
 
+	/* first row of each table [header] */
 	thead th {
-		position: -webkit-sticky;
+		
 		position: sticky;
-		top: 0;
+		top: 2px;
+		
 		border: 1px solid #bababa;
 		background: rgba(238, 238, 238);
 		height: 25px;
@@ -73,32 +81,33 @@
 	}
 
 	thead th:first-child {
-		width: 60px;
-		right: 0;
+		position: -webkit-sticky;
+		position: sticky;
+		width: 50px;
+		right: 2px;
 		z-index: 2;
 	}
-
-	thead th:nth-child(2) {
-		width: 60px;
-		right: 60px;
-		z-index: 2;
-	}
-
+	
 	tbody th:first-child {
 		position: -webkit-sticky;
 		position: sticky;
-		right: 0;
+		right: 2px;
 		z-index: 1;
-		background: #fff;		
+		background: #d6d6d6;		
 		
+	}
+	thead th:nth-child(2) {
+		width: 50px;
+		right: 55px;
+		z-index: 2;
 	}
 
 	tbody th:nth-child(2) {
 		position: -webkit-sticky;
 		position: sticky;
-		right: 60px;
+		right: 55px;
 		z-index: 1;
-		background: #ccc;
+		background: #d6d6d6;
 	}	
 	</style>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
@@ -129,6 +138,8 @@
 		}
 		});
 	} );
+	
+
 	</script>
 	<!-- script async src="https://www.googletagmanager.com/gtag/js?id=UA-155297596-1"></script -->
 	<script>
